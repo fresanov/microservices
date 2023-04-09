@@ -20,7 +20,6 @@ func NewAdapter(paymentServiceUrl string) (*Adapter, error) {
 	if err != nil {
 		return nil, err
 	}
-	defer conn.Close()
 	client := payment.NewPaymentClient(conn)
 	return &Adapter{payment: client}, nil
 }
